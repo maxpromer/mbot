@@ -28,6 +28,7 @@
         border-bottom: 2px solid #000;
         margin: auto;
         width: max-content;
+        font-size: 38px;
     }
     
     .big-banner {
@@ -153,7 +154,7 @@
     }
     
     #speaker > article {
-        width: 1080px;
+        max-width: 1080px;
         margin: auto;
     }
     
@@ -207,16 +208,119 @@
     
     #cost {
         width: 100%;
+        padding: 20px 0;
+        background: #fafafa;
+    }
+    
+    #cost > article > .text {
+        padding: 100px 60px;
+        text-align: right;
+        background: url(img/eefb4f6538265489b7c7f785abf97df7.png);
+        background-size: auto 100%;
+        background-position: left;
+        background-repeat: no-repeat;
+    }
+    
+    #cost > article > .text > .text {
+        font-size: 48px;
+    }
+    
+    #cost > article > .text > .note {
+        font-size: 28px;
+        color: #FF0000;
+    }
+    
+    #round {
         padding: 20px;
     }
     
-    #cost > .text {
-        font-size: 22px;
+    #round > article > ul {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        
+        display: flex;
+        flex-direction: row;
+        max-width: 1080px;
+        margin: auto;
     }
     
-    #cost > .note {
-        font-size: 14px;
-        color: #FF0000;
+    #round > article > ul > li {
+        list-style: none;
+        flex-grow: 1;
+        padding: 20px;
+    }
+    
+    #round > article > ul > li > h2 {
+        background: #FF9800;
+        margin: 0;
+        padding: 20px;
+        border-radius: 6px 6px 0 0;
+        color: #FFF;
+        font-size: 28px;
+    }
+    
+    #round > article > ul > li > ul {
+        margin: 0;
+        padding: 0;
+    }
+    
+    #round > article > ul > li > ul > li {
+        list-style: none;
+        
+        background: #FFB74D;
+        border-bottom: #f8a831 1px solid;
+        color: #FFF;
+        padding: 10px;
+    }
+    
+    #round > article > ul > li > div > a {
+        background: #FF9800;
+        display: block;
+        padding: 20px;
+        font-size: 18px;
+        border-radius: 0 0 6px 6px;
+        color: #FFF;
+        transition: 300mS all;
+    }
+    
+    #round > article > ul > li > div > a:hover {
+        background: #da8200;
+    }
+    
+    #contact {
+        padding: 20px;
+        background: #4f4f4f;
+        color: #FFF;
+    }
+    
+    #contact > h1 {
+        border-bottom-color: #FFF;
+    }
+    
+    #contact > article {
+        max-width: 1080px;
+        margin: auto;
+    }
+    
+    #contact > article > ul {
+        margin: 0;
+        padding: 20px 0;
+        
+        display: flex;
+        flex-direction: row;
+    }
+    
+    #contact > article > ul > li {
+        list-style: none;
+        text-align: center;
+        padding: 10px;
+        width: calc(100% / 3);
+    }
+    
+    #contact > article > ul > li > .icon > img {
+        max-width: 120px;
+        height: auto;
     }
 </style>
 
@@ -278,7 +382,7 @@ $(function() {
 		    <li><a href="#topics">หัวข้ออบรม</a></li>
 		    <li><a href="#speaker">ทีมวิทยากร</a></li>
 		    <li><a href="#cost">ค่าใช้จ่าย</a></li>
-		    <li><a href="#">รอบการอบรม</a></li>
+		    <li><a href="#round">รอบการอบรม</a></li>
 		    <li><a href="#register">ลงทะเบียน</a></li>
 		    <li><a href="#contact">สอบถามเพิ่มเติม</a></li>
 		</ul>
@@ -365,17 +469,19 @@ $(function() {
 <section id="cost">
     <h1>ค่าใช้จ่าย</h1>
     <article>
+        <!--
         <div class="icon">
             <img src="img/eefb4f6538265489b7c7f785abf97df7.png" alt="cash icon" />
         </div>
+        -->
         <div class="text">
             <div class="text">ค่ามัดจำ 100.- บาท สำหรับลงทะเบียน</div>
-            <div class="note">* ค่ามัดจำจะได้รับคืนเมื่อสิ้นสุดการอบรม</div>
+            <div class="note">*ค่ามัดจำจะได้รับคืนเมื่อสิ้นสุดการอบรม</div>
         </div>
     </article>
 </section>
 
-<section id="">
+<section id="round">
     <h1>รอบการอบรม</h1>
     <article>
         <ul>
@@ -387,7 +493,7 @@ $(function() {
                     <li>เปิดลงทะเบียนวันที่ .... ... 2562</li>
                     <li>ค่าลงทะเบียน 100 บาท</li>
                 </ul>
-                <div><a class="btn">ลงทะเบียน</a></div>
+                <div><a href="#register">ลงทะเบียน</a></div>
             </li>
             <li>
                 <h2>รอบที่ 2</h2>
@@ -397,7 +503,7 @@ $(function() {
                     <li>เปิดลงทะเบียนวันที่ .... ... 2562</li>
                     <li>ค่าลงทะเบียน 100 บาท</li>
                 </ul>
-                <div><a class="btn">ลงทะเบียน</a></div>
+                <div><a href="#register">ลงทะเบียน</a></div>
             </li>
         </ul>
     </article>
@@ -412,20 +518,32 @@ $(function() {
     <article>
         <ul>
             <li>
-                <div class="icon"></div>
+                <div class="icon"><img src="img/phone-receiver.png" alt="" /></div>
                 <div class="text">โทร. 1150</div>
             </li>
             <li>
-                <div class="icon"></div>
+                <div class="icon"><img src="img/close-envelope.png" alt="" /></div>
                 <div class="text">อีเมล์. ....@email.kmutnb.ac.th</div>
             </li>
             <li>
-                <div class="icon"></div>
+                <div class="icon"><img src="img/maps-and-flags.png" alt="" /></div>
                 <div class="text">ภาควิชาคอมพิวเตอร์ศึกษา มหาวิทยาลัยพระจอมเกล้าพระนครเหนือ(มจพ)</div>
             </li>
         </ul>
     </article>
 </section>
 
+<section id="logo-list">
+    <ul>
+        <li>
+            <a href="" target="_blank"><img src="" alt="" /></a>
+        </li>
+        <li>
+            <a href="" target="_blank"><img src="" alt="" /></a>
+        </li>
+        <li>
+            <a href="" target="_blank"><img src="" alt="" /></a>
+        </li>
+    </ul>
 </body>
 </html>
