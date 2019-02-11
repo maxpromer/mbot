@@ -5,6 +5,7 @@
 <title>mBot : A lot of fun run together</title>
 <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
 <script src="js/jquery-3.3.1.min.js"></script>
+<script src="https://api.longdo.com/map/?key=54a00acef27f50c41f4091b617f77b34"></script>
 <style>
     * {
         box-sizing: border-box;
@@ -322,6 +323,41 @@
         max-width: 120px;
         height: auto;
     }
+    
+    #map {
+        height: 640px;
+        color: #000;
+    }
+    
+    #map img {
+        max-width: inherit;
+    }
+    
+    #logo-list {
+        width: 100%;
+        padding: 40px 20px;
+        background: #323232;
+    }
+    
+    #logo-list > ul {
+        padding: 0;
+        max-width: 1080px;
+        margin: auto;
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    #logo-list > ul > li {
+        list-style: none;
+        flex-grow: 1;
+        text-align: center;
+    }
+    
+    #logo-list > ul > li img {
+        width: 120px;
+    }
 </style>
 
 <script>
@@ -361,6 +397,27 @@ $(function() {
     });
     
     onResize();
+    
+    var map = new longdo.Map({
+      placeholder: $("#map")[0]
+    });
+    
+    map.location({ 
+        lat: 13.820493,
+        lon: 100.515268
+    }, true);
+    map.zoom(20);
+    
+    var popup1 = new longdo.Popup({ 
+        lat: 13.820493,
+        lon: 100.515268
+    }, {
+        title: "ตึก 52 คณะครุศาตร์อุตสาหกรรม",
+        detail: "ภาควิชาคอมพิวเตอร์ศึกษา ชั้น 2 ห้อง 52-224",
+        closable: false
+    });
+    
+    map.Overlays.add(popup1);
 });
 </script>
 </head>
@@ -510,7 +567,7 @@ $(function() {
 </section>
 
 <section id="register">
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeUn6VLkkd3imqjZWQ38P5ciKwcCsgTuJU2r2Lto-cG2MUqXg/viewform?embedded=true" width="100%" height="1288" frameborder="0" marginheight="0" marginwidth="0">กำลังโหลด...</iframe>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeUn6VLkkd3imqjZWQ38P5ciKwcCsgTuJU2r2Lto-cG2MUqXg/viewform?embedded=true" width="100%" height="1723" frameborder="0" marginheight="0" marginwidth="0">กำลังโหลด...</iframe>
 </section>
 
 <section id="contact">
@@ -530,19 +587,23 @@ $(function() {
                 <div class="text">ภาควิชาคอมพิวเตอร์ศึกษา มหาวิทยาลัยพระจอมเกล้าพระนครเหนือ(มจพ)</div>
             </li>
         </ul>
+        <div id="map"></div>
     </article>
 </section>
 
 <section id="logo-list">
     <ul>
         <li>
-            <a href="" target="_blank"><img src="" alt="" /></a>
+            <a href="https://www.facebook.com/CEDTrainingCenter/" target="_blank"><img src="img/ced training center - logo.png" alt="" /></a>
         </li>
         <li>
-            <a href="" target="_blank"><img src="" alt="" /></a>
+            <a href="https://www.kmutnb.ac.th/" target="_blank"><img src="img/logo_kmutnbnew-254x300.png" alt="" /></a>
         </li>
         <li>
-            <a href="" target="_blank"><img src="" alt="" /></a>
+            <a href="http://www.fte.kmutnb.ac.th/" target="_blank"><img src="img/160175_kn.png" alt="" /></a>
+        </li>
+        <li>
+            <a href="https://www.kmutnb.ac.th/" target="_blank"><img src="img/60 Years KMUTNB_Master Logo.png" alt="" /></a>
         </li>
     </ul>
 </body>
