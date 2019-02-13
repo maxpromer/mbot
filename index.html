@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <title>mBot : A lot of fun run together</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="https://api.longdo.com/map/?key=54a00acef27f50c41f4091b617f77b34"></script>
@@ -327,7 +329,7 @@
     }
     
     #contact > article > ul > li > .icon > img {
-        max-width: 120px;
+        width: 120px;
         height: auto;
     }
     
@@ -371,9 +373,97 @@
         opacity: 1;
     }
     
+    #logo-list > ul > li {
+        padding: 10px;
+    }
+    
     #logo-list > ul > li img {
-        height: 120px;
+        max-height: 120px;
         width: auto;
+    }
+    
+    @media only screen and (max-width: 600px) {
+        .big-banner {
+            height: 400px;
+        }
+        
+        h1 {
+            font-size: 32px;
+        }
+        
+        #course {
+            background-size: 120px auto;
+            padding: 20px 20px;
+        }
+        
+        #course > h2 {
+            font-size: 32px;
+        }
+    
+        #course > div {
+            font-size: 18px;
+        }
+        
+        #topics > div {
+            flex-direction: column;
+        }
+        
+        #topics > div > article {
+            margin-bottom: 0;
+        }
+        
+        #topics > div > article:hover {
+            transform: scale(1);
+            box-shadow: none;
+        }
+        
+        #speaker {
+            padding: 20px 0;
+        }
+        
+        #speaker > article > ul > li {
+            width: 50%;
+            padding: 10px;
+        }
+
+        #cost > article > .text {
+            padding: 20px;
+            text-align: right;
+        }
+
+        #cost > article > .text > .text {
+            font-size: 22px;
+        }
+
+        #cost > article > .text > .note {
+            font-size: 16px;
+        }
+        
+        #round > article > ul {
+            flex-direction: column;
+        }
+        
+        #round > article > ul > li {
+            padding: 20px 0;
+        }
+        
+        #contact > article > ul {
+            flex-direction: column;
+        }
+
+        #contact > article > ul > li {
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        #contact > article > ul > li > .icon > img {
+            width: 120px;
+            height: auto;
+        }
+        
+        #logo-list {
+            padding: 20px 0;
+        }
     }
 </style>
 
