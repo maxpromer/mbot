@@ -105,13 +105,16 @@
     
     #course > h2 {
         font-size: 42px;
-        margin: 0;
+        margin: auto;
         padding: 0;
         margin-bottom: 20px;
+        max-width: 1080px;
     }
     
     #course > div {
         font-size: 20px;
+        max-width: 1080px;
+        margin: auto;
     }
     
     #topics {
@@ -295,6 +298,10 @@
         color: #FFF;
     }
     
+    #contact a {
+        color: #FFF;
+    }
+    
     #contact > h1 {
         border-bottom-color: #FFF;
     }
@@ -353,6 +360,15 @@
         list-style: none;
         flex-grow: 1;
         text-align: center;
+    }
+    
+    #logo-list a {
+        opacity: 0.6;
+        transition: opacity 300mS;
+    }
+    
+    #logo-list a:hover {
+        opacity: 1;
     }
     
     #logo-list > ul > li img {
@@ -414,7 +430,7 @@ $(function() {
         lon: 100.515268
     }, {
         title: "ตึก 52 คณะครุศาตร์อุตสาหกรรม",
-        detail: "ภาควิชาคอมพิวเตอร์ศึกษา ชั้น 2 ห้อง 52-224",
+        detail: "ภาควิชาคอมพิวเตอร์ศึกษา ชั้น 2 ห้อง 52-511",
         closable: false
     });
     
@@ -441,15 +457,15 @@ $(function() {
 		    <li><a href="#speaker">ทีมวิทยากร</a></li>
 		    <li><a href="#cost">ค่าใช้จ่าย</a></li>
 		    <li><a href="#round">รอบการอบรม</a></li>
-		    <li><a href="#register">ลงทะเบียน</a></li>
+		    <!-- <li><a href="#register">ลงทะเบียน</a></li> -->
 		    <li><a href="#contact">สอบถามเพิ่มเติม</a></li>
 		</ul>
 	</nav>
 </section>
 
 <section id="course">
-    <h2>หลักสูตรการฝึกอบรม เพื่อเรียนรู้พื้นฐานของหุ่นยนต์ mBot STEM</h2>
-    <div>สำหรับนักเรียนหรือบุคคลทั่วไปอายุระหว่าง 13-18 ปี ที่สนใจเริ่มต้นเรียนรู้พื้นฐานการเขียนโปรแกรมเพื่อควบคุมหุ่นยนต์ mBot</div>
+    <h2>หลักสูตรการฝึกอบรม mBot</h2>
+    <div>mBot เป็นหุ่นยนต์เพื่อการศึกษาสำหรับผู้เริ่มต้นซึ่งทำให้การสอนและการเรียนรู้การเขียนโปรแกรมหุ่นยนต์ง่ายและสนุก เรียนรู้เกี่ยวกัยเครื่องจักรกลและชิ้นส่วนอิเล็กทรอนิกส์ และพื้นฐานของการเขียนโปรแกรมบล็อกและพัฒนาความคิดเชิงตรรกะและทักษะการออกแบบ</div>
 </section>
 
 <section id="topics">
@@ -467,8 +483,8 @@ $(function() {
             <h3>Day 2</h3>
             <ul>
                 <li>การเขียนโปรแกรมควบคุมหุ่นยนต์ mBot ตรวจจับเส้น</li>
-                <li>การเขียนโปรแกรมควบคุมหุ่นยนต์ mBot ทางแยก</li>
-                <li>การเขียนโปรแกรมหุ่นยนต์ในคลังสินค้า Amazon</li>
+                <li>การเขียนโปรแกรมควบคุมหุ่นยนต์ mBot เดินตามเส้นแบบทางแยก</li>
+                <li>การแข่งขันหุ่นยนต์ในคลังสินค้า Amazon</li>
             </ul>
         </article>
     </div>
@@ -507,7 +523,7 @@ $(function() {
                 </article>
             </li>
             <li>
-                <div><img src="" alt="พี่โม" /></div>
+                <div><img src="img/mo.jpg" alt="พี่โม (ปรีดาพร อึ่งนภารัตน์)" /></div>
                 <article>
                     <h3>พี่โม</h3>
                     <div>ปรีดาพร อึ่งนภารัตน์</div>
@@ -546,9 +562,11 @@ $(function() {
             <li>
                 <h2>รอบที่ 1</h2>
                 <ul>
-                    <li>สำหรับนักเรียนระดับมัธยมศึกษาตอนต้น (ม.1-3)</li>
-                    <li>อบรมวันที่ .... ... 2562</li>
-                    <li>เปิดลงทะเบียนวันที่ .... ... 2562</li>
+                    <li>สำหรับนักเรียนระดับมัธยมศึกษาตอนปลาย (ม.4-6)</li>
+                    <li>อบรมวันที่ 9-10 มีนาคม 2562</li>
+                    <li>รับจำนวน 15 คน</li>
+                    <li>อบรม ณ ห้อง 52-511 ตึก 52 คณะครุศาสตร์อุตสาหกรรม มหาวิทยาลัยพระจอมเกล้าพระนครเหนือ</li>
+                    <li>เปิดลงทะเบียนวันที่ 22 กุมพาพันธ์ ถึง 3 มีนาคม 2562</li>
                     <li>ค่าลงทะเบียน 100 บาท</li>
                 </ul>
                 <div><a href="#register">ลงทะเบียน</a></div>
@@ -556,9 +574,11 @@ $(function() {
             <li>
                 <h2>รอบที่ 2</h2>
                 <ul>
-                    <li>สำหรับนักเรียนระดับมัธยมศึกษาตอนปลาย (ม.4-6)</li>
-                    <li>อบรมวันที่ .... ... 2562</li>
-                    <li>เปิดลงทะเบียนวันที่ .... ... 2562</li>
+                    <li>สำหรับนักเรียนระดับมัธยมศึกษาตอนต้น (ม.1-3)</li>
+                    <li>อบรมวันที่ 16-17 มีนาคม 2562</li>
+                    <li>รับจำนวน 15 คน</li>
+                    <li>อบรม ณ ห้อง 52-511 ตึก 52 คณะครุศาสตร์อุตสาหกรรม มหาวิทยาลัยพระจอมเกล้าพระนครเหนือ</li>
+                    <li>เปิดลงทะเบียนวันที่ 22 กุมพาพันธ์ ถึง 3 มีนาคม 2562</li>
                     <li>ค่าลงทะเบียน 100 บาท</li>
                 </ul>
                 <div><a href="#register">ลงทะเบียน</a></div>
@@ -567,9 +587,11 @@ $(function() {
     </article>
 </section>
 
+<!--
 <section id="register">
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeUn6VLkkd3imqjZWQ38P5ciKwcCsgTuJU2r2Lto-cG2MUqXg/viewform?embedded=true" width="100%" height="1723" frameborder="0" marginheight="0" marginwidth="0">กำลังโหลด...</iframe>
 </section>
+-->
 
 <section id="contact">
     <h1>สอบถามเพิ่มเติม</h1>
@@ -577,11 +599,11 @@ $(function() {
         <ul>
             <li>
                 <div class="icon"><img src="img/phone-receiver.png" alt="" /></div>
-                <div class="text">โทร. 1150</div>
+                <div class="text">โทร. <a href="tel:0944345360">094-4345360(พี่ป้อม)</a>, <a href="tel:0996267427">099-6267427(พี่โม)</a></div>
             </li>
             <li>
                 <div class="icon"><img src="img/close-envelope.png" alt="" /></div>
-                <div class="text">อีเมล์. ....@email.kmutnb.ac.th</div>
+                <div class="text">อีเมล์. <a href="mailto:s6002041510055@email.kmutnb.ac.th">s6002041510055@email.kmutnb.ac.th(พี่ป้อม)</a>, <a href="mailto:s6002041520051@email.kmutnb.ac.th">s6002041520051@email.kmutnb.ac.th(พี่โม)</a></div>
             </li>
             <li>
                 <div class="icon"><img src="img/maps-and-flags.png" alt="" /></div>
