@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>นาฬิกาจับเวลาการแข่งขัน</title>
+<script>
+var startTimestamp, endTimestamp;
+var tHandle;
+    
+function start(time, callback) {
+    startTimestamp = Date.now();
+    endTimestamp = Date.now() + time;
+    
+    tHandle = setInterval(function() {
+        // var diff = Date.now() - startTimestamp;
+        var diff = endTimestamp - Date.now();
+        if (diff <= 0) {
+            stop();
+            if (typeof callback === "function") callback();
+        }
+        showTime(diff);
+    }, 100);
+}
+
+function stop() {
+    clearInterval(tHandle);
+}
+    
+function showTime(t) {
+    var min = new Date(t).getMinutes();
+    var sec = new Date(t).getSeconds();
+    
+    var textShow = '';
+    if (min < 10) textShow += '0';
+    textShow += min;
+    textShow += ':';
+    if (sec < 10) textShow += '0';
+    textShow += sec;
+    document.getElementById('big-time').innerHTML = textShow;
+}
+
+function btnStart(e) {
+    var time = prompt("กรอกเวลาที่ต้องการ (นาที)", "");
+    
+    if (time != null) {
+        start(parseInt(time) * 60 * 1000, () => alert("หมดเวลาแล้ว"));
+    }
+}
+    
+function btnStop(e) {
+    stop();
+}
+</script>
+
+<link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    html, body {
+        height: 100%;
+    }
+    body {
+        /*
+        background: url(img/mbotvideo.png) #f2f2f4;
+        background-repeat: no-repeat;
+        background-position: center 0;
+        background-size: auto 100%;
+        */
+        
+        background: url(img/mBot-fit.png) #282828;
+        background-repeat: no-repeat;
+        background-size: auto 40%;
+        background-position: right 100%;
+        
+        font-family: 'Kanit', sans-serif;
+    }
+    
+    section {
+        background: rgba(255, 255, 255, 0.85);
+        width: 1080px;
+        margin: auto;
+        margin-top: 30px;
+        
+        text-align: center;
+        padding: 40px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+    }
+    
+    h1 {
+        font-size: 80px;
+        padding: 0;
+        margin: 0;
+    }
+    
+    h2 {
+        font-size: 24px;
+        padding: 0;
+        margin: 0;
+        text-decoration: underline;
+        font-weight: normal;
+    }
+    
+    #big-time {
+        font-size: 300px;
+        font-family: "Arial Black";
+        text-shadow: 5px 5px #fff;
+        color: #2900ff;
+    }
+    
+    article {
+        text-align: center;
+        padding: 20px;
+    }
+    
+     button {
+        background: #FF9800;
+        padding: 6px 12px;
+        font-size: 18px;
+        border-radius: 4px;
+        color: #FFF;
+        transition: 300mS all;
+        border: none;
+    }
+    
+    button:hover {
+        background: #da8200;
+    }
+</style>
+</head>
+
+<body>
+  <section>
+    <h1>นาฬิกาจับเวลา</h1>
+    <h2 contenteditable="true">[กรอกหัวข้อที่นี่]</h2>
+    <div id="big-time">00:00</div>
+  </section>
+  
+  <article>
+    <button id="start" onClick="btnStart()">จับเวลา</button>
+    <button id="stop" onClick="btnStop()">หยุดนับเวลา</button>
+    <button onClick="window.location.reload()">รีเซ็ต</button>
+  </article>
+</body>
+</html>
