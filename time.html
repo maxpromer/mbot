@@ -8,6 +8,8 @@ var startTimestamp, endTimestamp;
 var tHandle;
     
 function start(time, callback) {
+    if (tHandle) stop();
+    
     startTimestamp = Date.now();
     endTimestamp = Date.now() + time;
     
@@ -24,6 +26,7 @@ function start(time, callback) {
 
 function stop() {
     clearInterval(tHandle);
+    tHandle = false;
 }
     
 function showTime(t) {
